@@ -1,0 +1,839 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "767e727e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005034,
+     "end_time": "2024-12-22T13:22:38.053403",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.048369",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "**This notebook is an exercise in the [Intro to Programming](https://www.kaggle.com/learn/intro-to-programming) course.  You can reference the tutorial at [this link](https://www.kaggle.com/alexisbcook/functions).**\n",
+    "\n",
+    "---\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "425e54db",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004018,
+     "end_time": "2024-12-22T13:22:38.062010",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.057992",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "In the tutorial, you learned about functions. In this exercise, you'll write some of your own!\n",
+    "\n",
+    "# Set up the notebook\n",
+    "\n",
+    "Run the next code cell without changes to set up the notebook."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "cf51a18b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.072233Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.071734Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.497056Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.495850Z"
+    },
+    "papermill": {
+     "duration": 0.432487,
+     "end_time": "2024-12-22T13:22:38.498828",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.066341",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Setup complete.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Set up the exercise\n",
+    "import math\n",
+    "from learntools.core import binder\n",
+    "binder.bind(globals())\n",
+    "from learntools.intro_to_programming.ex2 import *\n",
+    "print('Setup complete.')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5d950554",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004162,
+     "end_time": "2024-12-22T13:22:38.507768",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.503606",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Question 1\n",
+    "\n",
+    "In the [House Prices - Advanced Regression Techniques competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview), you need to use information like the number of bedrooms and bathrooms to predict the price of a house.  Inspired by this competition, you'll write your own function to do this.\n",
+    "\n",
+    "In the next code cell, create a function `get_expected_cost()` that has two arguments:\n",
+    "- `beds` - number of bedrooms \n",
+    "- `baths` - number of bathrooms\n",
+    "\n",
+    "It should return the expected cost of a house with that number of bedrooms and bathrooms.  Assume that:\n",
+    "- the expected cost for a house with 0 bedrooms and 0 bathrooms is `80000`.  \n",
+    "- each bedroom adds `30000` to the expected cost\n",
+    "- each bathroom adds `10000` to the expected cost.\n",
+    "\n",
+    "For instance, \n",
+    "- a house with 1 bedroom and 1 bathroom has an expected cost of `120000`, and \n",
+    "- a house with 2 bedrooms and 1 bathroom has an expected cost of `150000`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "141ab630",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.517454Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.517013Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.523154Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.522124Z"
+    },
+    "papermill": {
+     "duration": 0.012619,
+     "end_time": "2024-12-22T13:22:38.524522",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.511903",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "120000\n",
+      "150000\n"
+     ]
+    }
+   ],
+   "source": [
+    "# TODO: Complete the function\n",
+    "def get_expected_cost(beds, baths):\n",
+    "    value = 80000 \n",
+    "    cost_per_bedroom = 30000\n",
+    "    cost_per_bathroom = 10000\n",
+    "    total_cost = value +(beds*cost_per_bedroom) +(baths*cost_per_bathroom)\n",
+    "    return total_cost\n",
+    "print(get_expected_cost(1, 1))\n",
+    "print(get_expected_cost(2, 1))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "d461a8f4",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.534654Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.534320Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.537597Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.536858Z"
+    },
+    "papermill": {
+     "duration": 0.010077,
+     "end_time": "2024-12-22T13:22:38.539080",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.529003",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Uncomment to see a hint\n",
+    "#q1.hint()\n",
+    "\n",
+    "# Uncomment to view the solution\n",
+    "#q1.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2262aa78",
+   "metadata": {
+    "papermill": {
+     "duration": 0.006961,
+     "end_time": "2024-12-22T13:22:38.554149",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.547188",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Question 2\n",
+    "\n",
+    "You are thinking about buying a home and want to get an idea of how much you will spend, based on the number of bedrooms and bathrooms.  You are trying to decide between four different options:\n",
+    "- Option 1: house with two bedrooms and three bathrooms\n",
+    "- Option 2: house with three bedrooms and two bathrooms\n",
+    "- Option 3: house with three bedrooms and three bathrooms\n",
+    "- Option 4: house with three bedrooms and four bathrooms\n",
+    "\n",
+    "Use the `get_expected_cost()` function you defined in question 1 to set `option_1`, `option_2`, `option_3`, and `option_4` to the expected cost of each option."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "7215b7c6",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.564255Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.563915Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.571130Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.570070Z"
+    },
+    "papermill": {
+     "duration": 0.014672,
+     "end_time": "2024-12-22T13:22:38.573211",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.558539",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Option 1: 170000\n",
+      "Option 2: 190000\n",
+      "Option 3: 200000\n",
+      "Option 4: 210000\n"
+     ]
+    }
+   ],
+   "source": [
+    "# TODO: Use the get_expected_cost function to fill in each value\n",
+    "option_one = option_one = get_expected_cost(2, 3)  \n",
+    "option_two = get_expected_cost(3, 2)  \n",
+    "option_three = get_expected_cost(3, 3)  \n",
+    "option_four = get_expected_cost(3, 4) \n",
+    "\n",
+    "# Print the results\n",
+    "print(\"Option 1:\", option_one)  \n",
+    "print(\"Option 2:\", option_two)  \n",
+    "print(\"Option 3:\", option_three)  \n",
+    "print(\"Option 4:\", option_four)  "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "9265091c",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.587162Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.586840Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.590144Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.589278Z"
+    },
+    "papermill": {
+     "duration": 0.011242,
+     "end_time": "2024-12-22T13:22:38.591643",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.580401",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Uncomment to see a hint\n",
+    "#q2.hint()\n",
+    "\n",
+    "# Uncomment to view the solution\n",
+    "#q2.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2838a529",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004524,
+     "end_time": "2024-12-22T13:22:38.600975",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.596451",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Question 3\n",
+    "\n",
+    "You're a home decorator, and you'd like to use Python to streamline some of your work.  Specifically, you're creating a tool that you intend to use to calculate the cost of painting a room.\n",
+    "\n",
+    "As a first step, define a function `get_cost()` that takes as input:\n",
+    "- `sqft_walls` = total square feet of walls to be painted\n",
+    "- `sqft_ceiling` = square feet of ceiling to be painted\n",
+    "- `sqft_per_gallon` = number of square feet that you can cover with one gallon of paint\n",
+    "- `cost_per_gallon` = cost (in dollars) of one gallon of paint\n",
+    "\n",
+    "It should return the cost (in dollars) of putting one coat of paint on all walls and the ceiling.  Assume you can buy the exact amount of paint that you need, so you can buy partial gallons (e.g., if you need 7.523 gallons, you can buy that exact amount, instead of needing to buy 8 gallons and waste some paint).  Do not round your answer."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "03035a6f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.611363Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.610999Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.615813Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.614898Z"
+    },
+    "papermill": {
+     "duration": 0.011893,
+     "end_time": "2024-12-22T13:22:38.617435",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.605542",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "107.14285714285714\n"
+     ]
+    }
+   ],
+   "source": [
+    "# TODO: Finish defining the function\n",
+    "def get_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):\n",
+    "    total_sqft = sqft_walls + sqft_ceiling  # Total square footage to paint\n",
+    "    gallons_needed = total_sqft / sqft_per_gallon  # Gallons of paint needed\n",
+    "    cost = gallons_needed * cost_per_gallon  # Total cost of paint\n",
+    "    return cost\n",
+    "\n",
+    "# Example usage\n",
+    "print(get_cost(1000, 500, 350, 25))\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "fc3df583",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.628115Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.627811Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.631024Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.630271Z"
+    },
+    "papermill": {
+     "duration": 0.010165,
+     "end_time": "2024-12-22T13:22:38.632434",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.622269",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Uncomment to see a hint\n",
+    "#q3.hint()\n",
+    "\n",
+    "# Uncomment to view the solution\n",
+    "#q3.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cae567ee",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004385,
+     "end_time": "2024-12-22T13:22:38.641570",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.637185",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Question 4\n",
+    "\n",
+    "Use the `get_cost()` function you defined in Question 3 to calculate the cost of applying one coat of paint to a room with:\n",
+    "- 432 square feet of walls, and\n",
+    "- 144 square feet of ceiling.\n",
+    "\n",
+    "Assume that one gallon of paint covers 400 square feet and costs $15.  As in Question 3, assume you can buy partial gallons of paint.  Do not round your answer."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "1e5f0d00",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.652361Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.652034Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.658053Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.656845Z"
+    },
+    "papermill": {
+     "duration": 0.013372,
+     "end_time": "2024-12-22T13:22:38.659673",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.646301",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "21.599999999999998\n"
+     ]
+    }
+   ],
+   "source": [
+    "# TODO: Set the project_cost variable to the cost of the project\n",
+    "def get_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):\n",
+    "    total_sqft = sqft_walls + sqft_ceiling  # Total square footage to paint\n",
+    "    gallons_needed = total_sqft / sqft_per_gallon  # Gallons of paint needed\n",
+    "    cost = gallons_needed * cost_per_gallon  # Total cost of paint\n",
+    "    return cost\n",
+    "\n",
+    "# Inputs for the problem\n",
+    "sqft_walls = 432\n",
+    "sqft_ceiling = 144\n",
+    "sqft_per_gallon = 400\n",
+    "cost_per_gallon = 15\n",
+    "project_cost = get_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon)\n",
+    "\n",
+    "# Output the result\n",
+    "print(project_cost)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "86c5dc17",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.671096Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.670695Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.674594Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.673486Z"
+    },
+    "papermill": {
+     "duration": 0.01125,
+     "end_time": "2024-12-22T13:22:38.676168",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.664918",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Uncomment to see a hint\n",
+    "#q4.hint()\n",
+    "\n",
+    "# Uncomment to view the solution\n",
+    "#q4.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ed338940",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004591,
+     "end_time": "2024-12-22T13:22:38.685680",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.681089",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 🌶️ Question 5\n",
+    "\n",
+    "Now say you can no longer buy fractions of a gallon.  (For instance, if you need 4.3 gallons to do a project, then you have to buy 5 gallons of paint.)\n",
+    "\n",
+    "With this new scenario, you will create a new function `get_actual_cost` that uses the same inputs and calculates the cost of your project.\n",
+    "\n",
+    "One function that you'll need to use to do this is `math.ceil()`.  We demonstrate usage of this function in the code cell below.  It takes as a number as input and rounds the number up to the nearest integer.  \n",
+    "\n",
+    "Run the next code cell to test this function for yourself.  Feel free to change the value of `test_value` and make sure `math.ceil()` returns the number you expect."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "9d86b96e",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.696386Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.696056Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.701081Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.699874Z"
+    },
+    "papermill": {
+     "duration": 0.012212,
+     "end_time": "2024-12-22T13:22:38.702649",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.690437",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3\n"
+     ]
+    }
+   ],
+   "source": [
+    "test_value = 2.17\n",
+    "\n",
+    "rounded_value = math.ceil(test_value)\n",
+    "print(rounded_value)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8b0b9dfd",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004672,
+     "end_time": "2024-12-22T13:22:38.712484",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.707812",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "Use the next code cell to define the function `get_actual_cost()`.  You'll need to use the `math.ceil()` function to do this.\n",
+    "\n",
+    "When answering this question, note that it's completely valid to define a function that makes use of another function.  For instance, we can define a function `round_up_and_divide_by_three` that makes use of the `math.ceil` function:\n",
+    "```\n",
+    "def round_up_and_divide_by_three(num):\n",
+    "    new_value = math.ceil(num)\n",
+    "    final_value = new_value / 3\n",
+    "    return final_value\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "6c617614",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.724109Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.723714Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.729815Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.728713Z"
+    },
+    "papermill": {
+     "duration": 0.013983,
+     "end_time": "2024-12-22T13:22:38.731403",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.717420",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "30\n"
+     ]
+    }
+   ],
+   "source": [
+    "import math\n",
+    "\n",
+    "# Define the function\n",
+    "def get_actual_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):\n",
+    "    # Calculate total square footage\n",
+    "    total_sqft = sqft_walls + sqft_ceiling\n",
+    "    # Calculate gallons needed and round up to the nearest whole number\n",
+    "    gallons_needed = math.ceil(total_sqft / sqft_per_gallon)\n",
+    "    # Calculate the total cost based on whole gallons\n",
+    "    total_cost = gallons_needed * cost_per_gallon\n",
+    "    return total_cost\n",
+    "\n",
+    "# Example usage\n",
+    "sqft_walls = 432\n",
+    "sqft_ceiling = 144\n",
+    "sqft_per_gallon = 400\n",
+    "cost_per_gallon = 15\n",
+    "\n",
+    "# Calculate the actual cost\n",
+    "actual_cost = get_actual_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon)\n",
+    "print(actual_cost)  # Expected: $30\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "b4221375",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.742623Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.742299Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.745983Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.744987Z"
+    },
+    "papermill": {
+     "duration": 0.011062,
+     "end_time": "2024-12-22T13:22:38.747541",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.736479",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Uncomment to see a hint\n",
+    "#q5.hint()\n",
+    "\n",
+    "# Uncomment to view the solution\n",
+    "#q5.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "67de3183",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004845,
+     "end_time": "2024-12-22T13:22:38.757662",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.752817",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "Once your function is verified as correct, run the next code cell to calculate the updated cost of your project."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "5aad91b6",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.769096Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.768709Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.775163Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.774306Z"
+    },
+    "papermill": {
+     "duration": 0.013723,
+     "end_time": "2024-12-22T13:22:38.776618",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.762895",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "30"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "get_actual_cost(432, 144, 400, 15) "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1b95b31d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004957,
+     "end_time": "2024-12-22T13:22:38.786868",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.781911",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "Say you're working with a slightly larger room.  Run the next code cell to calculate the cost of the project."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "772983d8",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-22T13:22:38.798226Z",
+     "iopub.status.busy": "2024-12-22T13:22:38.797904Z",
+     "iopub.status.idle": "2024-12-22T13:22:38.802988Z",
+     "shell.execute_reply": "2024-12-22T13:22:38.802196Z"
+    },
+    "papermill": {
+     "duration": 0.012433,
+     "end_time": "2024-12-22T13:22:38.804473",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.792040",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "45"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "get_actual_cost(594, 288, 400, 15) "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "da8a9e38",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005173,
+     "end_time": "2024-12-22T13:22:38.815086",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.809913",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Keep going\n",
+    "\n",
+    "Continue to learn about **[data types](https://www.kaggle.com/alexisbcook/data-types)**."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a61442bf",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004986,
+     "end_time": "2024-12-22T13:22:38.825371",
+     "exception": false,
+     "start_time": "2024-12-22T13:22:38.820385",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "*Have questions or comments? Visit the [course discussion forum](https://www.kaggle.com/learn/intro-to-programming/discussion) to chat with other learners.*"
+   ]
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [],
+   "isGpuEnabled": false,
+   "isInternetEnabled": true,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.12"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 3.508028,
+   "end_time": "2024-12-22T13:22:39.351503",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2024-12-22T13:22:35.843475",
+   "version": "2.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
