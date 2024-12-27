@@ -1,0 +1,846 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "5751d738",
+   "metadata": {
+    "papermill": {
+     "duration": 0.00571,
+     "end_time": "2024-12-27T18:34:00.005268",
+     "exception": false,
+     "start_time": "2024-12-27T18:33:59.999558",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "**This notebook is an exercise in the [Python](https://www.kaggle.com/learn/python) course.  You can reference the tutorial at [this link](https://www.kaggle.com/colinmorris/lists).**\n",
+    "\n",
+    "---\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3b0853fc",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003877,
+     "end_time": "2024-12-27T18:34:00.013666",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.009789",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "Things get more interesting with lists. You'll apply your new knowledge to solve the questions below. Remember to run the following cell first."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "206fa42a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-27T18:34:00.023650Z",
+     "iopub.status.busy": "2024-12-27T18:34:00.023238Z",
+     "iopub.status.idle": "2024-12-27T18:34:00.483868Z",
+     "shell.execute_reply": "2024-12-27T18:34:00.482447Z"
+    },
+    "papermill": {
+     "duration": 0.467959,
+     "end_time": "2024-12-27T18:34:00.485910",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.017951",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Setup complete.\n"
+     ]
+    }
+   ],
+   "source": [
+    "from learntools.core import binder; binder.bind(globals())\n",
+    "from learntools.python.ex4 import *\n",
+    "print('Setup complete.')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "01345519",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004963,
+     "end_time": "2024-12-27T18:34:00.495404",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.490441",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 1.\n",
+    "\n",
+    "Complete the function below according to its docstring."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "e2541ddc",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-27T18:34:00.506231Z",
+     "iopub.status.busy": "2024-12-27T18:34:00.505641Z",
+     "iopub.status.idle": "2024-12-27T18:34:00.512112Z",
+     "shell.execute_reply": "2024-12-27T18:34:00.510210Z"
+    },
+    "papermill": {
+     "duration": 0.014483,
+     "end_time": "2024-12-27T18:34:00.514609",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.500126",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def select_second(L):\n",
+    "    if len(L) > 1:\n",
+    "        return L[1]\n",
+    "    return None\n",
+    "    \"\"\"Return the second element of the given list. If the list has no second\n",
+    "    element, return None.\n",
+    "    \"\"\"\n",
+    "    pass\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "61ea2c4a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-27T18:34:00.525876Z",
+     "iopub.status.busy": "2024-12-27T18:34:00.525503Z",
+     "iopub.status.idle": "2024-12-27T18:34:00.537906Z",
+     "shell.execute_reply": "2024-12-27T18:34:00.536587Z"
+    },
+    "papermill": {
+     "duration": 0.020448,
+     "end_time": "2024-12-27T18:34:00.540056",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.519608",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 2, \"questionType\": 2, \"questionId\": \"1_SelectSecondItem\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#3366cc\">Hint:</span> Python starts counting at 0. So the second item isn't indexed with a 2"
+      ],
+      "text/plain": [
+       "Hint: Python starts counting at 0. So the second item isn't indexed with a 2"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 3, \"questionType\": 2, \"questionId\": \"1_SelectSecondItem\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc99\">Solution:</span> \n",
+       "```python\n",
+       "def select_second(L):\n",
+       "    if len(L) < 2:\n",
+       "        return None\n",
+       "    return L[1]\n",
+       "```"
+      ],
+      "text/plain": [
+       "Solution: \n",
+       "```python\n",
+       "def select_second(L):\n",
+       "    if len(L) < 2:\n",
+       "        return None\n",
+       "    return L[1]\n",
+       "```"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "q1.hint()\n",
+    "q1.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b957b469",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004658,
+     "end_time": "2024-12-27T18:34:00.549647",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.544989",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 2.\n",
+    "\n",
+    "You are analyzing sports teams.  Members of each team are stored in a list. The Coach is the first name in the list, the captain is the second name in the list, and other players are listed after that. \n",
+    "These lists are stored in another list, which starts with the best team and proceeds through the list to the worst team last.  Complete the function below to select the **captain** of the worst team."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "4fb5fff2",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-27T18:34:00.560892Z",
+     "iopub.status.busy": "2024-12-27T18:34:00.560509Z",
+     "iopub.status.idle": "2024-12-27T18:34:00.571557Z",
+     "shell.execute_reply": "2024-12-27T18:34:00.570347Z"
+    },
+    "papermill": {
+     "duration": 0.018536,
+     "end_time": "2024-12-27T18:34:00.573357",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.554821",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 2, \"questionType\": 2, \"questionId\": \"2_LosingTeamCaptain\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#3366cc\">Hint:</span> The last item in a list `L` can be selected with `L[-1]`. The first item in the first sublist would be selected as `L[0][0]`"
+      ],
+      "text/plain": [
+       "Hint: The last item in a list `L` can be selected with `L[-1]`. The first item in the first sublist would be selected as `L[0][0]`"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 3, \"questionType\": 2, \"questionId\": \"2_LosingTeamCaptain\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc99\">Solution:</span> \n",
+       "```python\n",
+       "def losing_team_captain(teams):\n",
+       "    return teams[-1][1]\n",
+       "```"
+      ],
+      "text/plain": [
+       "Solution: \n",
+       "```python\n",
+       "def losing_team_captain(teams):\n",
+       "    return teams[-1][1]\n",
+       "```"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "q2.hint()\n",
+    "q2.solution()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "5943c6ec",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-27T18:34:00.585333Z",
+     "iopub.status.busy": "2024-12-27T18:34:00.584931Z",
+     "iopub.status.idle": "2024-12-27T18:34:00.589410Z",
+     "shell.execute_reply": "2024-12-27T18:34:00.588336Z"
+    },
+    "papermill": {
+     "duration": 0.01243,
+     "end_time": "2024-12-27T18:34:00.591255",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.578825",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def losing_team_captain(teams):\n",
+    "    return teams[-1][1]\n",
+    "    \"\"\"Given a list of teams, where each team is a list of names, return the 2nd player (captain)\n",
+    "    from the last listed team\n",
+    "    \"\"\"\n",
+    "    pass"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "294e17f9",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005001,
+     "end_time": "2024-12-27T18:34:00.602071",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.597070",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 3.\n",
+    "\n",
+    "The next iteration of Mario Kart will feature an extra-infuriating new item, the *Purple Shell*. When used, it warps the last place racer into first place and the first place racer into last place. Complete the function below to implement the Purple Shell's effect."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "53f59467",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-27T18:34:00.613770Z",
+     "iopub.status.busy": "2024-12-27T18:34:00.613390Z",
+     "iopub.status.idle": "2024-12-27T18:34:00.618369Z",
+     "shell.execute_reply": "2024-12-27T18:34:00.617089Z"
+    },
+    "papermill": {
+     "duration": 0.013005,
+     "end_time": "2024-12-27T18:34:00.620249",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.607244",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def purple_shell(racers):\n",
+    "    temp = racers[0]\n",
+    "    racers[0] = racers[-1]\n",
+    "    racers[-1] = temp\n",
+    "    \"\"\"Given a list of racers, set the first place racer (at the front of the list) to last\n",
+    "    place and vice versa.\n",
+    "    \n",
+    "    >>> r = [\"Mario\", \"Bowser\", \"Luigi\"]\n",
+    "    >>> purple_shell(r)\n",
+    "    >>> r\n",
+    "    [\"Luigi\", \"Bowser\", \"Mario\"]\n",
+    "    \"\"\"\n",
+    "    pass\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "a05e2dcc",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-27T18:34:00.632909Z",
+     "iopub.status.busy": "2024-12-27T18:34:00.632489Z",
+     "iopub.status.idle": "2024-12-27T18:34:00.644195Z",
+     "shell.execute_reply": "2024-12-27T18:34:00.642773Z"
+    },
+    "papermill": {
+     "duration": 0.019843,
+     "end_time": "2024-12-27T18:34:00.646219",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.626376",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 2, \"questionType\": 2, \"questionId\": \"3_PurpleShell\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#3366cc\">Hint:</span> Your function should change the list it receives, but not return anything\n",
+       "\n",
+       "To swap the list elements, think back to the code you used in the very first exercise to swap two variables."
+      ],
+      "text/plain": [
+       "Hint: Your function should change the list it receives, but not return anything\n",
+       "\n",
+       "To swap the list elements, think back to the code you used in the very first exercise to swap two variables."
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 3, \"questionType\": 2, \"questionId\": \"3_PurpleShell\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc99\">Solution:</span> \n",
+       "```python\n",
+       "def purple_shell(racers):\n",
+       "    # One slick way to do the swap is x[0], x[-1] = x[-1], x[0].\n",
+       "    temp = racers[0]\n",
+       "    racers[0] = racers[-1]\n",
+       "    racers[-1] = temp\n",
+       "```"
+      ],
+      "text/plain": [
+       "Solution: \n",
+       "```python\n",
+       "def purple_shell(racers):\n",
+       "    # One slick way to do the swap is x[0], x[-1] = x[-1], x[0].\n",
+       "    temp = racers[0]\n",
+       "    racers[0] = racers[-1]\n",
+       "    racers[-1] = temp\n",
+       "```"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "q3.hint()\n",
+    "q3.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5e6c2b92",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005214,
+     "end_time": "2024-12-27T18:34:00.657728",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.652514",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 4.\n",
+    "\n",
+    "What are the lengths of the following lists? Fill in the variable `lengths` with your predictions. (Try to make a prediction for each list *without* just calling `len()` on it.)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "3038de6e",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-27T18:34:00.670733Z",
+     "iopub.status.busy": "2024-12-27T18:34:00.670352Z",
+     "iopub.status.idle": "2024-12-27T18:34:00.678134Z",
+     "shell.execute_reply": "2024-12-27T18:34:00.677057Z"
+    },
+    "papermill": {
+     "duration": 0.016432,
+     "end_time": "2024-12-27T18:34:00.680074",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.663642",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 3, \"questionType\": 1, \"questionId\": \"4_UnderstandLen\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc99\">Solution:</span> \n",
+       "- a: There are three items in this list. Nothing tricky yet.\n",
+       "- b: The list `[2, 3]` counts as a single item. It has one item before it. So we have 2 items in the list\n",
+       "- c: The empty list has 0 items\n",
+       "- d: The expression is the same as the list `[2, 3]`, which has length 2."
+      ],
+      "text/plain": [
+       "Solution: \n",
+       "- a: There are three items in this list. Nothing tricky yet.\n",
+       "- b: The list `[2, 3]` counts as a single item. It has one item before it. So we have 2 items in the list\n",
+       "- c: The empty list has 0 items\n",
+       "- d: The expression is the same as the list `[2, 3]`, which has length 2."
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# line below provides some explanation\n",
+    "q4.solution()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "9ae5743c",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-27T18:34:00.694393Z",
+     "iopub.status.busy": "2024-12-27T18:34:00.693952Z",
+     "iopub.status.idle": "2024-12-27T18:34:00.701374Z",
+     "shell.execute_reply": "2024-12-27T18:34:00.700043Z"
+    },
+    "papermill": {
+     "duration": 0.016885,
+     "end_time": "2024-12-27T18:34:00.703551",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.686666",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0\n",
+      "3\n",
+      "3\n",
+      "10\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = [1, 2, 3]\n",
+    "b = [1, [2, 3]]\n",
+    "c = []\n",
+    "d = [1, 2, 3][1:]\n",
+    "print(len([]))                   # 0\n",
+    "print(len([1, 2, 3]))            # 3\n",
+    "print(len(['a', ['b', 'c'], 'd']))  # 3\n",
+    "print(len(list(range(10))))      # 10\n",
+    "# Put your predictions in the list below. Lengths should contain 4 numbers, the\n",
+    "# first being the length of a, the second being the length of b and so on.\n",
+    "lengths = []\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "490c4c6e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005643,
+     "end_time": "2024-12-27T18:34:00.715183",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.709540",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 5. <span title=\"A bit spicy\" style=\"color: darkgreen \">🌶️</span>\n",
+    "\n",
+    "We're using lists to record people who attended our party and what order they arrived in. For example, the following list represents a party with 7 guests, in which Adela showed up first and Ford was the last to arrive:\n",
+    "\n",
+    "    party_attendees = ['Adela', 'Fleda', 'Owen', 'May', 'Mona', 'Gilbert', 'Ford']\n",
+    "\n",
+    "A guest is considered 'fashionably late' if they arrived after at least half of the party's guests. However, they must not be the very last guest (that's taking it too far). In the above example, Mona and Gilbert are the only guests who were fashionably late.\n",
+    "\n",
+    "Complete the function below which takes a list of party attendees as well as a person, and tells us whether that person is fashionably late."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "1f62b8b7",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-27T18:34:00.728569Z",
+     "iopub.status.busy": "2024-12-27T18:34:00.728201Z",
+     "iopub.status.idle": "2024-12-27T18:34:00.732792Z",
+     "shell.execute_reply": "2024-12-27T18:34:00.731867Z"
+    },
+    "papermill": {
+     "duration": 0.012961,
+     "end_time": "2024-12-27T18:34:00.734384",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.721423",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def fashionably_late(arrivals, name):\n",
+    "    order = arrivals.index(name)\n",
+    "    return order >= len(arrivals) / 2 and order != len(arrivals) - 1\n",
+    "    \"\"\"Given an ordered list of arrivals to the party and a name, return whether the guest with that\n",
+    "    name was fashionably late.\n",
+    "    \"\"\"\n",
+    "    pass"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "535f1888",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-12-27T18:34:00.747360Z",
+     "iopub.status.busy": "2024-12-27T18:34:00.746953Z",
+     "iopub.status.idle": "2024-12-27T18:34:00.758096Z",
+     "shell.execute_reply": "2024-12-27T18:34:00.757010Z"
+    },
+    "papermill": {
+     "duration": 0.019746,
+     "end_time": "2024-12-27T18:34:00.760179",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.740433",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 2, \"questionType\": 2, \"questionId\": \"5_FashionablyLate\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#3366cc\">Hint:</span> Use the index method to find when the person arrived. Check whether that is a fashionably late spot given the list length (`len`). Think about 0-indexing"
+      ],
+      "text/plain": [
+       "Hint: Use the index method to find when the person arrived. Check whether that is a fashionably late spot given the list length (`len`). Think about 0-indexing"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 3, \"questionType\": 2, \"questionId\": \"5_FashionablyLate\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc99\">Solution:</span> \n",
+       "```python\n",
+       "def fashionably_late(arrivals, name):\n",
+       "    order = arrivals.index(name)\n",
+       "    return order >= len(arrivals) / 2 and order != len(arrivals) - 1\n",
+       "```"
+      ],
+      "text/plain": [
+       "Solution: \n",
+       "```python\n",
+       "def fashionably_late(arrivals, name):\n",
+       "    order = arrivals.index(name)\n",
+       "    return order >= len(arrivals) / 2 and order != len(arrivals) - 1\n",
+       "```"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "q5.hint()\n",
+    "q5.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ab45b1c4",
+   "metadata": {
+    "papermill": {
+     "duration": 0.006552,
+     "end_time": "2024-12-27T18:34:00.773482",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.766930",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Keep Going\n",
+    "\n",
+    "That's it for lists and tuples! Now you have the baseline knowledge to **[learn about loops](https://www.kaggle.com/colinmorris/loops-and-list-comprehensions)**, which is where lists and tuples get really interesting. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6916b168",
+   "metadata": {
+    "papermill": {
+     "duration": 0.006384,
+     "end_time": "2024-12-27T18:34:00.786612",
+     "exception": false,
+     "start_time": "2024-12-27T18:34:00.780228",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "*Have questions or comments? Visit the [course discussion forum](https://www.kaggle.com/learn/python/discussion) to chat with other learners.*"
+   ]
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [],
+   "isGpuEnabled": false,
+   "isInternetEnabled": true,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.12"
+  },
+  "learntools_metadata": {
+   "lesson_index": 3,
+   "type": "exercise"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 3.630161,
+   "end_time": "2024-12-27T18:34:01.313594",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2024-12-27T18:33:57.683433",
+   "version": "2.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
